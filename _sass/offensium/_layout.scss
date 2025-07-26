@@ -77,14 +77,8 @@
 }
 
 @include media-query($on-palm) {
-  // On mobile: full width columns
-  .footer-logo {
-  display: none;
-  height: 12rem;
-}
-  .footer-col {
-    float: none;
-    width: calc(100% - (#{$spacing-unit} / 2));
+  body {
+    background-image: none;
   }
 }
 
