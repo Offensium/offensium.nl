@@ -1,0 +1,228 @@
+/**
+ * Site header styles
+ */
+.site-header {
+  border-bottom: none !important; // Remove default border
+  box-shadow: none !important;    // Remove any shadow
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.site-title {
+  color: $offensium_purple !important; // Custom purple color from variables
+  font-size: 1.5rem; // redundant, overridden below
+  font-family: $offensium_h1; // Use display font
+  font-size: 3.5rem;        // Big headline size
+  text-transform: uppercase; // All caps
+  &:hover {
+    text-decoration: none !important; // No underline on hover
+  }
+}
+
+.site-nav {
+  float: right; // Align navigation to the right
+  line-height: $base-line-height * $base-font-size * 2.25; // Vertically align links
+}
+.nav-trigger {
+  display: none; // Hide hamburger menu on desktop
+  padding-top: 4rem;
+}
+
+.menu-icon {
+  display: none; // Hide menu icon (desktop)
+}
+
+.page-link {
+  color: $text-color !important; // Gray text
+  background-color: $offensium_green; // Bright green background
+  margin-left: 1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 2rem; // Pill shape
+  font-family: $offensium_h1; // Display font
+  text-transform: uppercase;
+  line-height: $base-line-height;
+  
+  &:not(:last-child) {
+    margin-right: 0;
+  }
+}
+
+/**
+ * Site footer
+ */
+
+
+
+
+
+.main-content {
+  flex: 1;
+}
+.contact-list,
+.social-media-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+@include media-query($on-laptop) {
+  // On smaller screens: switch to 2-1 column layout
+  .footer-col-1,
+  .footer-col-2 {
+    width: calc(50% - (#{$spacing-unit} / 2));
+  }
+
+  .footer-col-3 {
+    width: calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+@include media-query($on-palm) {
+  // On mobile: full width columns
+  .footer-logo {
+  display: none;
+  height: 12rem;
+}
+  .footer-col {
+    float: none;
+    width: calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+
+/**
+ * Page content area
+ */
+.page-content {
+  padding: $spacing-unit 0;
+  flex: 1; // Ensures footer sticks to bottom if content is short
+}
+
+.page-heading {
+  @include relative-font-size(2);
+}
+
+.page-description {
+  font-family: $base-font-family; // Custom font
+  color: white;
+  font-size: 1.25rem;
+  max-width: 70rem;
+  line-height: 1.8;
+}
+
+
+/**
+ * Post lists & items
+ */
+.post-list-heading {
+  @include relative-font-size(1.75);
+}
+
+.post-list {
+  margin-left: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.post-item::marker {
+  content: none; // Removes default list bullet
+  display: none;
+}
+
+.post-tags {
+  font-family: $base-font-family;
+  position: relative;
+  margin-left: 9.5rem;
+  top: -0.9rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.post-tags .tagged-label {
+  color: #999; // Lighter tag label color
+}
+
+.post-meta {
+  margin-top: 1rem; // Pushes metadata down
+  color: #808080;   // Soft gray
+  font-size: 0.9rem;
+  font-family: $base-font-family;
+}
+
+.post-link,
+.post-link:hover {
+  color: white !important;
+  font-family: $offensium_h1 !important;
+  text-decoration: none;
+}
+
+.post-link {
+  font-family: $offensium_h1;
+  font-size: 1.2rem;
+  color: white !important;
+  text-decoration: none;
+  display: block;
+  margin-left: 9.5rem;
+  margin-top: -3.8rem; // Pulls it upward for visual alignment
+}
+
+.post-date {
+  color: #808080;
+  font-family: $base-font-family;
+}
+
+.post-header {
+  margin-bottom: $spacing-unit;
+}
+
+.post-title {
+  @include relative-font-size(2.625);
+  letter-spacing: -1px;
+  line-height: 1;
+  font-family: $offensium_h1;
+  text-transform: uppercase;
+  color: $offensium_purple !important;
+
+  @include media-query($on-laptop) {
+    @include relative-font-size(2.25);
+  }
+}
+
+.post-content {
+  margin-bottom: $spacing-unit;
+
+  h2 {
+    @include relative-font-size(2);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.75);
+    }
+  }
+
+  h3 {
+    @include relative-font-size(1.625);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.375);
+    }
+  }
+
+  h4 {
+    @include relative-font-size(1.25);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.125);
+    }
+  }
+}
+
+.post-divider {
+  width: 0.2rem;
+  height: 3.8rem;
+  margin-left: 120px;
+  margin-top: -1.7rem;
+  background-color: $offensium_purple; // Purple divider
+  border-radius: 0.2rem;
+}

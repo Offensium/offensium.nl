@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+// Load custom fonts from local .ttf files
+@font-face {
+  font-family: 'OtypicalText'; // Used for post meta, descriptions, etc.
+  src: url('/assets/fonts/OtypicalText-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Unbounded'; // Used for headings and site title
+  src: url('/assets/fonts/Unbounded-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Define defaults for each variable.
+
+$base-font-family: "OtypicalText" !default;
+$base-font-size:   1rem !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+$spacing-unit:     1.9rem !default;
+
+$offensium_h1: "Unbounded";
+$text-color:       #111 !default;
+$background-color: #252525 !default;
+$offensium_green:  #B0F42C !default;
+$offensium_purple: #C084FC !default;
+
+$grey-color:       #252525 !default;
+$grey-color-light: #252525;
+$grey-color-dark:  $grey-color;
+
+$table-text-align: left !default;
+
+// Width of the content area
+$content-width:    50rem !default;
+
+$on-palm:          40rem !default;
+$on-laptop:        50rem !default;
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//   .wrapper {
+//     padding-right: $spacing-unit / 2;
+//     padding-left: $spacing-unit / 2;
+//   }
+// }
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+// Import partials.
+@import
+  "offensium/base",
+  "offensium/layout",
+  "offensium/syntax-highlighting"
+;

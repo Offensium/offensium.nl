@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a><br><br><br>
+  <p class="page-description">
+    Exploring the depths of Offensive Security. We do vulnerability research,
+    binary exploitation, red teaming and malware development.
+  </p> <br><br>
+<div class="home">
+
+  {%- if site.posts.size > 0 -%}
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+      <li class="post-item">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <div class="post-content-block">
+            <div class="post-meta-block">
+              <span class="post-date">{{ post.date | date: date_format }}</span>
+            </div>
+
+            <div class="post-divider"></div>
+
+
+            <h3>
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h3>
+            <p class="post-tags">
+              {{ post.author }} <span class="tagged-label">tagged</span> {{ post.tags | join: " " }}
+            </p>
+
+            {%- if site.show_excerpts -%}
+              {{ post.excerpt }}
+            {%- endif -%}
+          </div>
+        </div>
+      </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</div>
